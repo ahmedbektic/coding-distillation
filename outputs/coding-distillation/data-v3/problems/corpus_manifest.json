@@ -1,0 +1,28 @@
+{
+  "target_count": 1000,
+  "actual_count": 1000,
+  "sources_included": [
+    "mbpp",
+    "codewars"
+  ],
+  "sources_excluded": [
+    "codeforces",
+    "leetcode"
+  ],
+  "audit": {
+    "evaluated": 1079,
+    "accepted": 1000,
+    "rejected": 79,
+    "by_source": {
+      "mbpp": {
+        "evaluated": 371,
+        "accepted": 322
+      },
+      "codewars": {
+        "evaluated": 708,
+        "accepted": 678
+      }
+    }
+  },
+  "corpus_hash": "b639ce5ae4100753d77d9063d35b51cc62ac303800328b3353a1fdd5412683d5"
+}

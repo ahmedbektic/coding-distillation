@@ -1,0 +1,55 @@
+seed: 1729
+data_dir: data-v3
+results_dir: results-v3
+teachers:
+  - qwen2.5:7b-instruct-fp16
+  - qwen2.5-coder:7b-instruct-fp16
+  - deepseek-coder:6.7b-instruct-fp16
+  - codegemma:7b-instruct-fp16
+  - mistral:7b-instruct-v0.3-fp16
+  - codellama:7b-instruct-fp16
+dataset:
+  count: 1000
+  pilot_count: 20
+  cache_dir: ../../work/hf-cache
+  exclude_sources:
+    - codeforces
+    - leetcode
+ollama:
+  base_url: http://localhost:11434
+  timeout_seconds: 75
+  transport_attempts: 3
+  keep_alive: 10m
+  options:
+    temperature: 0
+    seed: 1729
+    num_ctx: 4096
+    num_predict: 2048
+    top_k: 40
+    top_p: 0.9
+    repeat_penalty: 1.1
+  model_options:
+    codegemma:
+      repeat_penalty: 1.0
+      penalize_newline: false
+      num_ctx: 2048
+      timeout_seconds: 100
+validation:
+  image: coding-distillation-sandbox:3
+  wall_seconds: 5
+  cpu_seconds: 3
+  memory_mb: 512
+  cpus: 1
+  pids: 32
+  output_bytes: 1048576
+  problem_seconds: 30
+  fail_fast: true
+  prioritize_boundaries: true
+  float_rel_tol: 0.000001
+  float_abs_tol: 0.000001
+  startup_seconds: 60
+  transport_seconds: 30
+  infrastructure_attempts: 2
+repair:
+  max_attempts: 3
+  problem_budget_seconds: 150

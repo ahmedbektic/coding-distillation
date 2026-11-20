@@ -1,0 +1,37 @@
+# Virtual environments and local runtime work directory
+venv/
+.venv/
+work/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+unsloth_compiled_cache/
+
+# Logs and runtime locks
+*.log
+*.lock
+.pipeline.lock
+
+# Legacy data directories
+**/data/
+**/data-v2/
+
+# Data directories (raw execution traces, intermediate outputs, distillation sets)
+**/raw/
+**/verified/
+**/distillation/
+**/archive/
+**/scratch/
+
+# Results and logs
+**/results/
+**/results-v2/
+**/results-v3/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

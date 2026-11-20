@@ -1,0 +1,46 @@
+seed: 1729
+data_dir: data-v2
+results_dir: results-v2
+teachers:
+- qwen2.5:7b-instruct-fp16
+- mistral:7b-instruct-v0.3-fp16
+- deepseek-coder:6.7b-instruct-fp16
+- orca2:7b-fp16
+- codellama:7b-instruct-fp16
+- llama2:7b-chat-fp16
+dataset:
+  repository: BAAI/TACO
+  revision: main
+  cache_dir: ../../work/hf-cache
+  count: 1000
+  pilot_count: 20
+  min_tests: 2
+  max_prompt_chars: 6500
+  exclusion_files: []
+ollama:
+  base_url: http://localhost:11434
+  timeout_seconds: 900
+  transport_attempts: 3
+  keep_alive: 10m
+  options:
+    temperature: 0
+    seed: 1729
+    num_ctx: 4096
+    num_predict: 2048
+    top_k: 40
+    top_p: 0.9
+    repeat_penalty: 1.1
+validation:
+  image: coding-distillation-sandbox:3
+  wall_seconds: 5
+  cpu_seconds: 3
+  memory_mb: 512
+  cpus: 1
+  pids: 32
+  output_bytes: 1048576
+  problem_seconds: 1800
+  float_rel_tol: 1.0e-06
+  float_abs_tol: 1.0e-06
+  startup_seconds: 60
+  transport_seconds: 30
+  infrastructure_attempts: 2

@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/
+data/verified/
+data/problems/
+data/experiment.json
+data/.pipeline.lock
+results/logs/
